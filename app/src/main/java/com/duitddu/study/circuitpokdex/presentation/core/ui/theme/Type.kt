@@ -1,4 +1,4 @@
-package com.duitddu.study.circuitpokdex.ui.theme
+package com.duitddu.study.circuitpokdex.presentation.core.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
