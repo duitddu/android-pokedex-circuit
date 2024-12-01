@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.duitddu.study.circuitpokdex.data.source.remote.api.PokemonApi
 import com.duitddu.study.circuitpokdex.presentation.core.ui.theme.CircuitPokdexTheme
 import com.duitddu.study.circuitpokdex.presentation.feat.list.PokemonListScreen
 import com.slack.circuit.backstack.rememberSaveableBackStack
@@ -26,7 +25,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CircuitPokdexTheme {
-                val backStack = rememberSaveableBackStack(root = // TODO)
+                val backStack = rememberSaveableBackStack(root = PokemonListScreen)
                 val navigator = rememberCircuitNavigator(backStack)
 
                 CircuitCompositionLocals(circuit) {
