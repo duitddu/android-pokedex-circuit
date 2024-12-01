@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.dagger.hilt.android)
     alias(libs.plugins.kotlinKsp)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlin.parcelize)
 }
 
 android {
@@ -53,6 +54,10 @@ android {
     }
 }
 
+ksp {
+    arg("circuit.codegen.mode", "hilt")
+}
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -68,6 +73,19 @@ dependencies {
     ksp(libs.dagger.hilt.compiler)
 
     implementation(libs.kotlin.serialization)
+
+    implementation(libs.circuit.foundation)
+    implementation(libs.circuitx.android)
+    api(libs.circuit.codegen.annotation)
+    ksp(libs.circuit.codegen.ksp)
+
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.okhttp)
+    implementation(libs.ktor.client.content.negotitation)
+    implementation(libs.ktor.json.serialization)
+
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
